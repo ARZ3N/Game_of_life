@@ -31,7 +31,7 @@ void parser(std::string& usrStr, std::vector<std::string> &vec){
     //[arg1] [x,y r,b ] 
 /**
  * proposed usr input-
- * [no of arguments] -n[no. of cell inputs] -sym[symbol to represent live cell] [[input coordinates of live cells]]
+ * -n[no. of cell inputs] -s[symbol to represent live cell] [[input coordinates of live cells]]
  */
     while(position<usrStr.length()){
         if(usrStr[position]!=' '){
@@ -50,8 +50,37 @@ void parser(std::string& usrStr, std::vector<std::string> &vec){
         position += 1;
     }
     
+}//end of parser() fn.
 
+void vectorParse(std::vector<std::string> vec){
+    std::string temp;
+    int n;
+    for(int it=0; it<vec.size(); ++it){
+        temp = vec[it];
+        if(temp[0] == '-'){
+            switch(temp[1]){
+                case('n'):
+                int pos=2, count=0;
+                while(temp[pos]=='\0'){
+                    pos += 1;
+                }
+                count = pos - 2;
+                pos=2;
+                while(temp[pos]!='\0'){
+                    
+                }
+
+            }
+        }
+    }
 }
+
+void printVector(std::vector<std::string> vec){
+    for(int it=0; it<vec.size(); ++it){
+        std::cout<<vec[it]<<"\n";
+    }
+}
+
  int main(){
     char board[BRD_DIM][BRD_DIM];
     char ch;
